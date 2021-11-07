@@ -1,4 +1,16 @@
 var output = document.querySelector("#output")
+var checkLocationBtn = document.querySelector("#check-location-btn")
+
+function initMap(){
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8,
+        mapId: '49440f09f7771e68'
+      });
+}
+
+
+checkLocationBtn.addEventListener('click',()=>{
 
 const successCallback = position =>{
     const{latitude, longitude} = position.coords;
@@ -8,13 +20,14 @@ const successCallback = position =>{
         return res.json()
     })
     .then((data)=>{
-        console.log(data.results[0].components)
-        output.innerHTML = data.results[0].formatted
-        console.log(data.results[0].formatted)
+        output.innerHTML = `<h4>${data.results[0].formatted}</h4>`
+        
     })
 }
 
 if(window.navigator.geolocation){
-    // window.navigator.geolocation.getCurrentPosition(console.log, console.log)
     window.navigator.geolocation.getCurrentPosition(successCallback, console.log)
 }
+
+})
+
