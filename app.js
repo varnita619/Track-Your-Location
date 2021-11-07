@@ -32,7 +32,8 @@ const successCallback = position =>{
             lng = eachElement.bounds.northeast.lng
             
         })
-        output.innerHTML = `<h4>${data.results[0].formatted}</h4>`
+        var location = data.results[0].formatted.slice(23)
+        output.innerHTML = `<h4>${location}</h4>`
         initMap()
         
     })
