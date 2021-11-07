@@ -1,14 +1,20 @@
-var output = document.querySelector("#output")
-var checkLocationBtn = document.querySelector("#check-location-btn")
+var output = document.querySelector("#output");
+var checkLocationBtn = document.querySelector("#check-location-btn");
+var lat;
+var lng;
 
 function initMap(){
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
+    let map = new google.maps.Map(document.getElementById('map'), {
+        // center: {lat: -34.397, lng: 150.644},
+        center: {lat: lat, lng: lng},
         zoom: 8,
         mapId: '49440f09f7771e68'
       });
+
+    let marker = new google.maps.Marker({position: map.center, map:map})
 }
 
+// Fetching Users Location
 
 checkLocationBtn.addEventListener('click',()=>{
 
@@ -20,7 +26,14 @@ const successCallback = position =>{
         return res.json()
     })
     .then((data)=>{
+        console.log(data)
+        data.results.map((eachElement)=>{
+            lat = eachElement.bounds.northeast.lat
+            lng = eachElement.bounds.northeast.lng
+            
+        })
         output.innerHTML = `<h4>${data.results[0].formatted}</h4>`
+        initMap()
         
     })
 }
