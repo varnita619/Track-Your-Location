@@ -1,24 +1,64 @@
-:root{
+:root {
     --backgroundcolor: #000000;
+    --primary-color:#f4f4f560;
 }
 
-html{
+html {
     box-sizing: border-box;
     font-size: 100%;
 }
 
-*,*::before, *::after{
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: var(--backgroundcolor);
     color: #ffffff;
 }
 
-#container{
+/* navbar */
+
+.navigation {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.2rem 1rem;
+    border-bottom-left-radius: 1.5rem;
+}
+
+.navigation .nav-brand {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav ul {
+    text-align: right;
+
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: right;
+}
+
+.navigation .link-active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Container */
+
+#container {
     margin: 10%;
     text-align: center;
     background-image: url(img/bg.jpg);
@@ -26,26 +66,26 @@ body{
     background-repeat: no-repeat;
 }
 
-#container #container-heading{
+#container #container-heading {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
     text-align: center;
 }
 
-#container #container-paragraph{
+#container #container-paragraph {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
     text-align: center;
 }
 
- #container #check-location-btn{
-     display: inline-block;
-    padding:0.3em 1.2em ;
+#container #check-location-btn {
+    display: inline-block;
+    padding: 0.3em 1.2em;
     margin: 0.9em 0.3em 0.3em 0;
     border-radius: 2em;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #ffffff;
     background-color: #4eb5f1;
@@ -53,24 +93,80 @@ body{
     transition: all 0.2s;
 }
 
-#container #check-location-btn:hover{
+#container #check-location-btn:hover {
     background-color: #4095c6;
 }
 
-@media all and (max-width:30em){
-      #check-location-btn{
+@media all and (max-width:30em) {
+    #check-location-btn {
         display: block;
         margin: 0.2em auto;
     }
-    }
+}
 
-#output{
+#output {
     font-family: 'Zen Antique', serif;
     text-align: center;
     font-size: 1.5rem;
 }
 
-#map{
+#map {
     width: 100%;
     height: 100vh;
+}
+
+/* link */
+
+.link{
+    text-decoration: none;
+    padding:0.5rem 1rem;
+ }
+ 
+ .link-primary{
+    background-color: var(--primary-color);
+     border-radius: 0.5rem;
+     color: white;
+ }
+ 
+ .link-secondary{
+     color: var(--primary-color);
+     border: 1px solid var(--primary-color);
+     border-radius: 0.5rem;
+ }
+ 
+ /* Look into BEM naming convension for css */
+ 
+ /* list */
+ 
+ .list-non-bullet{
+     list-style: none;
+ }
+ 
+ .list-items-inline{
+     display: inline;
+     padding: 0rem 0.5rem;
+ }
+
+/* footer */
+
+.footer{
+    background-color: rgba(211, 210, 210, 0.116);
+    padding:2rem 1rem;
+    text-align: center;
+    color: white;
+    margin-top: 5rem;
+    border-top-right-radius: 1rem;
+}
+
+.footer .footer-header{
+    font-weight: bold;
+    font-size: large;
+}
+
+.footer .link{
+    color: white;
+}
+
+.footer ul{
+    padding-inline-start: 0px;
 }
