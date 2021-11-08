@@ -1,5 +1,8 @@
 var output = document.querySelector("#output");
 var checkLocationBtn = document.querySelector("#check-location-btn");
+var darkLightModeBtn = document.querySelector(".dark-light-btn");
+var navigation = document.querySelector(".navigation");
+var footeer = document.querySelector(".footer")
 var lat;
 var lng;
 
@@ -32,7 +35,7 @@ const successCallback = position =>{
             lng = eachElement.bounds.northeast.lng
             
         })
-        var location = data.results[0].formatted.slice(22)
+        var location = data.results[0].formatted.slice(13)
         output.innerHTML = `<h4>${location}</h4>`
         initMap()
         
@@ -43,5 +46,20 @@ if(window.navigator.geolocation){
     window.navigator.geolocation.getCurrentPosition(successCallback, console.log)
 }
 
+})
+
+
+// Dark-Light-Mode Change 
+
+darkLightModeBtn.addEventListener('click',()=>{
+    document.body.classList.toggle('light-mode')
+    navigation.classList.toggle('light-mode-header-footer')
+    footeer.classList.toggle('light-mode-header-footer')
+    if(document.body.classList[0] === 'light-mode'){
+        darkLightModeBtn.innerHTML = '🌜'
+    }
+    else{
+        darkLightModeBtn.innerHTML = '☀'
+    }
 })
 
