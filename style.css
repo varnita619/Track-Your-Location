@@ -81,11 +81,13 @@ nav ul li a {
 /* Container */
 
 #container {
-    margin: 10%;
+    margin: 10% -2%;
     text-align: center;
     background-image: url(img/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
     box-shadow: 10px 10px 5px rgba(53, 53, 53, 0.356);
 }
 
