@@ -2,13 +2,12 @@ var output = document.querySelector("#output");
 var checkLocationBtn = document.querySelector("#check-location-btn");
 var darkLightModeBtn = document.querySelector(".dark-light-btn");
 var navigation = document.querySelector(".navigation");
-var footeer = document.querySelector(".footer")
+var footeer = document.querySelector(".footer-header")
 var lat;
 var lng;
 
 function initMap(){
     let map = new google.maps.Map(document.getElementById('map'), {
-        // center: {lat: -34.397, lng: 150.644},
         center: {lat: lat, lng: lng},
         zoom: 8,
         mapId: '49440f09f7771e68'
@@ -53,13 +52,13 @@ if(window.navigator.geolocation){
 
 darkLightModeBtn.addEventListener('click',()=>{
     document.body.classList.toggle('light-mode')
-    navigation.classList.toggle('light-mode-header-footer')
-    footeer.classList.toggle('light-mode-header-footer')
+    navigation.classList.toggle('light-mode-header')
+    footeer.classList.toggle('light-mode-footer')
     if(document.body.classList[0] === 'light-mode'){
-        darkLightModeBtn.innerHTML = '🌜'
+        darkLightModeBtn.innerHTML = 'Dark Mode 🌜'
     }
     else{
-        darkLightModeBtn.innerHTML = '☀'
+        darkLightModeBtn.innerHTML = 'Light Mode ☀'
     }
 })
 

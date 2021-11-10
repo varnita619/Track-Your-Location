@@ -1,7 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 :root {
     --backgroundcolor: #000000;
     --primary-color:#f4f4f560;
-    --footer-color:rgba(211, 210, 210, 0.116);
 }
 
 html {
@@ -16,8 +22,6 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: var(--backgroundcolor);
     color: #ffffff;
 }
@@ -26,8 +30,8 @@ body {
 
 .navigation {
     background-color: var(--primary-color);
+    padding: 20px;
     color: white;
-    padding: 0.2rem 1rem;
     border-bottom-left-radius: 1.5rem;
 }
 
@@ -52,11 +56,6 @@ nav ul li a {
     text-align: right;
 }
 
-.navigation .link-active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
 
 /* dark-light-mode */
 
@@ -66,14 +65,22 @@ nav ul li a {
     transition: 0.5s;
 }
 
-.light-mode-header-footer{
+.light-mode-header{
     background-color: rgba(0, 0, 0, 0.822);
     color: rgba(255, 250, 250, 0.904);
+}
+.light-mode-footer{
+    color: black;
 }
 
 /* button */
 
 .dark-light-btn{
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
     width: 40px;
     height: 30px;
 }
@@ -81,17 +88,38 @@ nav ul li a {
 /* Container */
 
 #container {
-    margin: 10% -2%;
+    padding: 20px;
+    margin: 5%;
     text-align: center;
     background-image: url(img/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     box-shadow: 10px 10px 5px rgba(53, 53, 53, 0.356);
+    border-radius: 10px;
+}
+
+@media (max-width:700px) {
+   #container{
+    background-image: url(img/bg8.jpg);
+       background-position: left center;
+       background-size: cover;
+   }
+   #container #container-heading {
+       color: black;
+   }
+   #container #container-paragraph{
+       color: black;
+   }
+   #output{
+    color: black;
+}
+
 }
 
 #container #container-heading {
+
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
     text-align: center;
@@ -127,10 +155,10 @@ nav ul li a {
         display: block;
         margin: 0.2em auto;
     }
+    
 }
 
 #output {
-    font-family: 'Zen Antique', serif;
     text-align: center;
     font-size: 1.5rem;
 }
@@ -138,6 +166,11 @@ nav ul li a {
 #map {
     width: 100%;
     height: 100vh;
+    border-radius: 10px;
+}
+
+#output{
+    margin: 10px 0px 20px 0px;
 }
 
 /* link */
@@ -158,40 +191,18 @@ nav ul li a {
      border: 1px solid var(--primary-color);
      border-radius: 0.5rem;
  }
- 
- /* Look into BEM naming convension for css */
- 
- /* list */
- 
- .list-non-bullet{
-     list-style: none;
- }
- 
- .list-items-inline{
-     display: inline;
-     padding: 0rem 0.5rem;
- }
 
 /* footer */
 
 .footer{
-    /* background-color: var(--primary-color); */
-    padding:2rem 1rem;
     text-align: center;
-    color: white;
-    margin-top: 5rem;
-    border-top-right-radius: 1rem;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
 }
 
 .footer .footer-header{
     font-weight: bold;
     font-size: large;
-}
-
- .link{
-    color: white;
-}
-
- ul{
-    padding-inline-start: 0px;
 }
