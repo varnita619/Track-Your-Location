@@ -2,7 +2,8 @@ var output = document.querySelector("#output");
 var checkLocationBtn = document.querySelector("#check-location-btn");
 var darkLightModeBtn = document.querySelector(".dark-light-btn");
 var navigation = document.querySelector(".navigation");
-var footeer = document.querySelector(".footer-header")
+var footer = document.querySelector(".footer-header");
+var footer_link = document.querySelector(".footer .link"); 
 var lat;
 var lng;
 
@@ -53,7 +54,8 @@ if(window.navigator.geolocation){
 darkLightModeBtn.addEventListener('click',()=>{
     document.body.classList.toggle('light-mode')
     navigation.classList.toggle('light-mode-header')
-    footeer.classList.toggle('light-mode-footer')
+    footer.classList.toggle('light-mode-footer')
+    footer_link.classList.toggle('light-mode-footer')
     if(document.body.classList[0] === 'light-mode'){
         darkLightModeBtn.innerHTML = 'Dark Mode 🌜'
     }
