@@ -192,17 +192,38 @@ nav ul li a {
      border-radius: 0.5rem;
  }
 
+ /* list */
+
+.list-non-bullet{
+    list-style: none;
+}
+
+.list-items-inline{
+    display: inline;
+    padding: 0rem 0.5rem;
+}
+
 /* footer */
 
 .footer{
+    /* background-color: rgb(26, 26, 26); */
+    padding:2rem 1rem;
     text-align: center;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    /* position: fixed; */
+    color: white;
+    margin-top: 5rem;
+    border-top-right-radius: 1rem;
 }
 
 .footer .footer-header{
     font-weight: bold;
     font-size: large;
 }
+
+.footer .link{
+    color: white;
+}
+
+.footer ul{
+    padding-inline-start: 0px;
+}
+
